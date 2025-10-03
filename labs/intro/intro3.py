@@ -1,0 +1,8 @@
+print(type(45))
+print(type(3.142))
+print(type('hello'))
+print(type(True))
+print(type(None))
+print(type([1, 2, 3]))
+print(type((4, 3, 1, 2)))
+print(type(len))

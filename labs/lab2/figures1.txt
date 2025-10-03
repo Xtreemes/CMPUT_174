@@ -1,0 +1,9 @@
+Steve,Minecraft
+Mario,Super Mario
+Master Chief,Halo
+Pikachu,Pokemon
+Link,Legend of Zelda
+Ahri,League of Legends
+Ridley,Metroid
+Ness,EarthBound
+Widowmaker,Overwatch

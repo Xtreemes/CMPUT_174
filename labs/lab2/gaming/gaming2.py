@@ -1,3 +1,12 @@
+"""
+Lists game characters. The user then chooses
+a character and must guess the franchise they
+are from in 3 attempts.
+
+Author: Luc Bibeau
+When: October 1, 2025
+"""
+
 file_name = input("Filename: ")
 
 file = open(file_name)

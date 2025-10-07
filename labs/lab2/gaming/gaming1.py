@@ -1,5 +1,5 @@
 """
-Lists game 
+Lists game characters and their respective franchise.
 
 Author: Luc Bibeau
 When: October 1, 2025

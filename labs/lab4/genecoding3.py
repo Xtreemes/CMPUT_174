@@ -1,5 +1,7 @@
 """
-
+Reads DNA files, shuffles them, and mutates the given
+strands if necessary. Compares two DNA strands to see
+which one is better (or if they are tied)
 
 Author: Luc Bibeau
 When: October 21, 2025
@@ -31,7 +33,7 @@ def shuffle(cleaned_dna):
     :param cleaned_dna: cleaned dna, list
     :return: shuffled dna, list
     """
-    midpoint = len(cleaned_dna) // 2
+    midpoint = len(cleaned_dna) // 2  # middle index of the list
 
     left = cleaned_dna[:midpoint]
     right = cleaned_dna[midpoint:]
@@ -122,6 +124,13 @@ def mutate_chain(dna_chain, shuffled_dna):
 
 
 def compare_chains(chain_1, chain_2):
+    """
+    Compares the stability of two chains
+    and returns the result
+    :param chain_1: dna chain, list
+    :param chain_2: dna chain, list
+    :return: which one wins, str
+    """
     chain_1_stability = chain_stability(chain_1)
     chain_2_stability = chain_stability(chain_2)
 
@@ -145,9 +154,9 @@ def main():
     cleaned_dna = read_dna(filename)
     shuffled_dna = shuffle(cleaned_dna)
 
-    while len(shuffled_dna) > 6:
-        num_strands = 3
+    num_strands = 3
 
+    while len(shuffled_dna) > 6:
         chain_1 = select_strands(shuffled_dna, num_strands)
         chain_2 = select_strands(shuffled_dna, num_strands)
 

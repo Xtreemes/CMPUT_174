@@ -55,7 +55,7 @@ def select_strands(shuffled_dna, num_strands):
     :return: selected strands, list || str || None
     """
     length = len(shuffled_dna)
-    if length < num_strands:
+    if length < num_strands:  # less dna present than being asked for
         return None
     elif num_strands == 1:
         return shuffled_dna.pop()

@@ -1,10 +1,16 @@
 """
+Displays glacier temperature information.
 
 Author: Luc Bibeau
 When: November 4, 2025
 """
 
 def create_grid(filename):
+    """
+    Creates a two-dimensional array from the given file
+    :param filename: filename, str
+    :return: 2d array of temperatures, list<list<int>>
+    """
 
     file = open(filename, 'r')
     lines = file.read().splitlines()
@@ -28,6 +34,11 @@ def create_grid(filename):
 
 
 def display_grid(grid):
+    """
+    Displays a grid of temperatures
+    :param grid: 2d array of temperatures, list<list<int>>
+    :return: None
+    """
     max_length = 3
 
     for row in grid:

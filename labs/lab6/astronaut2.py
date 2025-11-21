@@ -7,6 +7,7 @@ Author: Luc Bibeau
 When: November 18, 2025
 """
 
+ADJACENT_DIRECTIONS = ((-1, 0), (1, 0), (0,-1), (0, 1))
 EMOJIS = (
     ("A", "👨"),
     ("#", "🚧"),
@@ -69,10 +70,11 @@ def display_station(station_map):
         print(" ".join(line))
 
 
-def find_astronaut(station_map):
+def locate_char(station_map, char):
     """
-    Finds the astronaut's position in the station map
+    Locates a character in the station map
     :param station_map: station map, list<list<str>>
+    :param char: character, str
     :return: position, tuple<int>
     """
     row_index = 0
@@ -80,11 +82,20 @@ def find_astronaut(station_map):
         col_index = 0
 
         for entry in row:
-            if entry == "A":
+            if entry == char:
                 return row_index, col_index
             col_index += 1
 
         row_index += 1
+
+
+def find_astronaut(station_map):
+    """
+    Finds the astronaut's position in the station map
+    :param station_map: station map, list<list<str>>
+    :return: position, tuple<int>
+    """
+    return locate_char(station_map, "A")
 
 
 def locate_escape_pod(station_map):
@@ -93,16 +104,7 @@ def locate_escape_pod(station_map):
     :param station_map: station map, list<list<str>>
     :return: position, tuple<int>
     """
-    row_index = 0
-    for row in station_map:
-        col_index = 0
-
-        for entry in row:
-            if entry == "E":
-                return row_index, col_index
-            col_index += 1
-
-        row_index += 1
+    return locate_char(station_map, "E")
 
 
 def get_valid_moves(station_map, pos):
@@ -118,46 +120,20 @@ def get_valid_moves(station_map, pos):
     row = pos[0]
     col = pos[1]
 
-    max_row = len(station_map) - 1
-    max_col = len(station_map[0]) - 1
+    max_row = len(station_map)
+    max_col = len(station_map[0])
 
-    # use min & max functions to ensure moves are inbound
-    row_left_bound = max(0, row - 1)
-    row_right_bound = min(max_row, row + 1)
+    for direction in ADJACENT_DIRECTIONS:
+        current_row = row + direction[0]
+        current_col = col + direction[1]
 
-    col_left_bound = max(0, col - 1)
-    col_right_bound = min(max_col, col + 1)
+        if 0 <= current_row < max_row and 0 <= current_col < max_col:
+            char = station_map[current_row][current_col]
 
-
-    for row_iter in range(row_left_bound, row_right_bound + 1):  # add 1 because range is exclusive
-        if row_iter != row:
-            pos = (row_iter, col)
-
-            if is_valid(station_map, pos):
-                valid_moves.append(pos)
-
-    for col_iter in range(col_left_bound, col_right_bound + 1):  # add 1 because range is exclusive
-        if col_iter != col:
-            pos = (row, col_iter)
-
-            if is_valid(station_map, pos):
-                valid_moves.append(pos)
+            if char == "E" or char == "*":
+                valid_moves.append((current_row, current_col))
 
     return valid_moves
-
-
-def is_valid(station_map, pos):
-    """
-    Returns if a position is a valid spot
-    to move into.
-    :param station_map: station map, list<list<str>>
-    :param pos: position, tuple<int>
-    :return:
-    """
-    char = station_map[pos[0]][pos[1]]
-
-    return char == "E" or char == "*"
-
 
 
 

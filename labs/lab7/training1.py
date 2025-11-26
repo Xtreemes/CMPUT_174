@@ -1,4 +1,7 @@
 """
+Opens a den file of dragons and prompts the user
+to either exit or display the roster.
+
 Author: Luc Bibeau
 When: November 26, 2025
 """

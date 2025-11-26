@@ -1,0 +1,6 @@
+Skullcrusher,Rumblehorn,90.0,Expert  
+Stonecrusher,Rumblehorn,70.0,Intermediate  
+Rockbelly,Gronckle,60.0,Beginner  
+Nightmaw,Grim Gnasher,72.0,Intermediate  
+Boulderbite,Gronckle,68.5,Beginner  
+Ironhide,Rumblehorn,80.0,Advanced

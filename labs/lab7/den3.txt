@@ -1,0 +1,10 @@
+Changewing,Mystery Class,74.5,Intermediate  
+Thunderdrum,Tidal Class,77.0,Intermediate  
+Boneknapper,Mystery Class,65.0,Beginner  
+Scauldron,Tidal Class,73.5,Advanced  
+Triple Stryke,Strike Class,88.0,Expert  
+Fightmare,Mystery Class,67.0,Beginner  
+Stormcutter,Sharp Class,86.5,Expert  
+Razorwhip,Sharp Class,80.0,Advanced
+Balf & Blech,Hideous ZippleBack,83.3,Intermediate
+Snaptrapper,Mystery Class,52.1,Beginner

@@ -1,0 +1,8 @@
+Toothless,Night Fury,95.0,Expert  
+Stormfly,Deadly Nadder,82.5,Expert  
+Hookfang,Monstrous Nightmare,76.0,Intermediate  
+Spinecrasher,Deadly Nadder,68.0,Intermediate  
+Shadowtail,Night Fury,88.5,Intermediate  
+Firestorm,Monstrous Nightmare,79.5,Expert  
+Skyrider,Deadly Nadder,73.0,Intermediate  
+Blazewing,Monstrous Nightmare,60.0,Expert  

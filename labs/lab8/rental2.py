@@ -34,6 +34,16 @@ class RentalCatalog:
             listing_id, has_gym, price = line.split(", ")
             self.rental_units.append(Listing(listing_id, has_gym == "True", float(price)))
 
+    def get_listing(self, listing_id):
+        """
+        Uses linear search to find a listing by ID
+        :param listing_id: str
+        :return: Listing or None
+        """
+        for listing in self.rental_units:
+            if listing.listing_id == listing_id:
+                return listing
+
     def count_listings(self):
         """
         Returns the number of listings
@@ -46,13 +56,17 @@ class RentalCatalog:
         Returns the average price of the listings
         :return: float
         """
+        total_listings = self.count_listings()
+
+        if total_listings == 0:
+            return 0.  # prevent division by zero
 
         total = 0.
 
         for listing in self.rental_units:
             total += listing.get_price()
 
-        return round(total / self.count_listings(), 2)
+        return round(total / total_listings, 2)
 
     def reduce_prices_above_average(self):
         """

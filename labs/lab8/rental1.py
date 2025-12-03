@@ -1,4 +1,6 @@
 """
+Compares two listings.
+
 Author: Luc Bibeau
 When: December 2, 2025
 """
